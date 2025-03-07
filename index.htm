@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topaz</title>
+    <link rel="stylesheet" href="/cards.css">
+
+    <style>
+        header {
+            color: white;
+            width: 100vw;
+            height: 85px;
+            background-color: rgb(0, 0, 0);
+
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            top: 0px;
+            border-radius: 15px;
+
+
+
+
+        }
+
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        .fakehead {
+            color: white;
+            width: 100vw;
+            height: 100px;
+            padding-bottom: 5px;
+            border-radius: 15px;
+            filter: blur(1.1rem);
+
+            background-image: conic-gradient(from var(--angle), rgb(75, 15, 62), blue, rgb(129, 6, 6), rgb(75, 15, 62));
+            animation: spin 10s linear infinite;
+        }
+
+        .explore {
+            margin-top: 10px;
+
+            font-size: 30px;
+            color: white;
+        }
+
+        /* .card-con {
+            display: grid;
+            justify-content: space-around;
+
+
+        } */
+
+        .card-front img {
+            height: inherit;
+            width: inherit;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 15px;
+
+        }
+
+        .card-back {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card-back a {
+            position: absolute;
+
+            top: 50%;
+
+
+
+
+        }
+
+        .card-back button {
+            font-size: 35px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: rgb(46, 31, 102);
+            color: rgb(255, 255, 255);
+
+
+        }
+
+        .card-back button :hover {
+
+            transition: 1s;
+        }
+
+        .main{
+           text-align: center;
+        }
+        footer {
+            position: absolute;
+
+            bottom: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="fakehead"></div>
+    <header>
+        <h1>Welcome To The Topaz BookStore</h1>
+
+
+    </header>
+
+    <div class="explore">
+        <h1>
+            Explore Our Latest Books Collection</h1>
+    </div>
+
+    <div class="main">
+        <div class="card-con">
+
+
+            <div class="main-card">
+                <div class="card">
+                    <div class="card-front">
+                        /* <h1>Hello</h1> */
+                        <img src="./hub/imgs/art.jpg" alt="">
+                    </div>
+                    <div class="card-back">
+
+
+                        <a href="./subtleart.htm">
+                            <button>
+                                Read here</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-card">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="./hub/imgs/artofwar.jpg" alt="">
+                    </div>
+                    <div class="card-back">
+
+
+                        <a href="./artofwar.htm">
+                            <button>
+                                Read Here</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-card">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="./hub//imgs/psychologyofmoney.jpeg" alt="">
+                    </div>
+                    <div class="card-back">
+
+
+                        <a href="./money.htm">
+                            <button>
+                                Read Here</button></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <footer>
+
+        <h3>2025 book showcase | All rights Reserved</h3>
+    </footer>
+
+</body>
+
+</html>

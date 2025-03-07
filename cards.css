@@ -1,0 +1,224 @@
+body{
+    color: rgb(97, 96, 106);
+    background: rgb(16, 8, 27);
+    margin: 0px;
+    padding: 0px;
+    /* display: flex;
+    align-content: center; */
+}
+
+/* .card-container{
+    display: flex;
+    justify-content: ;
+   
+    
+} */
+.cards{
+    h1{
+        color: white;
+    }
+    /* margin: 50% auto; */
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    top: -8%;
+    left:-12% ;
+    background: rgb(35, 29, 29);
+    position: relative;
+    text-align: center;
+    border-radius: 15px;
+}
+/* .card{
+    h1{
+        color: white;
+    }
+    margin: 50% auto;
+    padding: 2em;
+    width: 300px;
+    background: rgb(35, 29, 29);
+    position: relative;
+    text-align: center;
+    border-radius: 15px;
+} */
+
+.card{
+    position: relative;
+    padding: 2em;
+    /* width: 250px; */
+    width: inherit;
+    margin: 0 auto ;
+    text-align: center;
+    height: inherit;
+    /* height: 400px; */
+    position: absolute;
+    
+    
+
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::before, .card::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 3px;
+    background-image: conic-gradient(from var(--angle), red, yellow, blue, white, purple, green, red);
+    border-radius: 15px;
+    animation: 3s spin linear infinite;
+}
+.card::before{
+    filter: blur(1.1rem);
+    opacity: 0.5;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+/* .card:hover{
+    transform: scale3d(1.1, 1.8, 1.5) rotate3d(1, 0, 0, 45deg) rotateY(180deg);
+    transition: 0.5s;
+    /* Add this to maintain the background */
+   /* background: rgb(35, 29, 29);
+}*/
+/* Optional: Add a shadow effect on hover */
+.card:hover::before, .card:hover::after{
+    opacity: 1;
+    background-color: transparent;
+    z-index: -1;
+    
+}
+.cards{
+    background-color: black;
+}
+
+
+
+.main-card {
+    height: 400px;
+    width: 300px;
+    position: relative; /* Add this */
+    perspective: 1000px; /* For flip effect */
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: rgb(35, 29, 29);
+}
+
+.card-front {
+    background-color: #f0f0f0; /* Add a background color */
+}
+
+.card-front h1 {
+    text-align: center;
+    padding-top: 150px;
+}
+
+.card-back h1 {
+    text-align: center;
+    padding-top: 150px;
+    color: white;
+}
+
+
+.card-con {
+    display: grid;
+    gap: 5rem;
+}
+
+/* Default layout for small screens (one column) */
+
+
+/* .card-con {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* For medium screens (two columns) 
+@media (min-width: 600px) {
+    .card-con {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ } 
+
+/* For large screens (three columns) 
+@media (min-width: 900px) {
+    .card-con {
+        grid-template-columns: repeat(3, 1fr);
+    }}
+ 
+ 
+*/
+
+.card-con {
+    display: grid;
+    width: 80vw;
+    
+    margin-left: 5vw;
+    gap: 10%; /* Adjust as needed for spacing */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically fill with cards */
+    justify-items: center; /* Center items in each grid cell */
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 600px) {
+    .card-con {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust card size for medium screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .card-con {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust card size for large screens */
+    }
+}
+
+
+
+
+    footer{
+        /* position: absolute; */
+        bottom: 0px;
+        width: 100vw;
+        text-align: center;
+        padding: 5px;
+        background-color: black;
+    }
